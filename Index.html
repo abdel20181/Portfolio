@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdelfettah Cherifi — Expert Infrastructure & Sécurité Microsoft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-panel:#10151d;
+    --bg-panel-2:#141b25;
+    --line:#1f2733;
+    --ink:#e7ecf2;
+    --ink-dim:#8b97a8;
+    --teal:#3ecf9a;
+    --teal-dim:#1f5e49;
+    --amber:#d9a441;
+    --blue:#4f8cf0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  h1,h2,h3{font-family:'Space Grotesk', sans-serif;}
+
+  .wrap{max-width:980px; margin:0 auto; padding:0 28px;}
+
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,14,20,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:60px;
+  }
+  .brand{font-family:'Space Grotesk'; font-weight:700; letter-spacing:0.5px; font-size:1.0rem;}
+  .brand span{color:var(--teal);}
+  .brand-group{display:flex; align-items:center; gap:11px;}
+  .logo-mark{flex-shrink:0;}
+  .logo-hero{margin-bottom:24px; display:block;}
+  nav ul{display:flex; gap:28px; list-style:none;}
+  nav a{color:var(--ink-dim); text-decoration:none; font-size:0.88rem; transition:color .2s;}
+  nav a:hover{color:var(--teal);}
+  @media (max-width:680px){ nav ul{display:none;} }
+
+  header.hero{
+    padding:96px 0 72px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  header.hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(600px 300px at 85% -10%, rgba(62,207,154,0.12), transparent),
+      radial-gradient(500px 260px at 10% 110%, rgba(79,140,240,0.10), transparent);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono'; font-size:0.78rem; color:var(--teal);
+    letter-spacing:1.5px; text-transform:uppercase; margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--teal); box-shadow:0 0 10px var(--teal);}
+  h1.title{
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    font-weight:700;
+    line-height:1.1;
+    max-width:780px;
+  }
+  h1.title .accent{color:var(--teal);}
+  .subtitle{
+    margin-top:18px; max-width:620px;
+    color:var(--ink-dim); font-size:1.05rem;
+  }
+  .hero-meta{
+    margin-top:32px; display:flex; flex-wrap:wrap; gap:24px;
+    font-family:'IBM Plex Mono'; font-size:0.82rem; color:var(--ink-dim);
+  }
+  .hero-meta b{color:var(--ink); font-weight:500;}
+
+  section{padding:64px 0; border-bottom:1px solid var(--line);}
+  .tag{
+    font-family:'IBM Plex Mono'; font-size:0.75rem; color:var(--amber);
+    letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px;
+  }
+  h2.h{font-size:1.7rem; margin-bottom:8px;}
+  .h-sub{color:var(--ink-dim); max-width:640px; margin-bottom:36px; font-size:0.96rem;}
+
+  .skills-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:760px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:480px){.skills-grid{grid-template-columns:1fr;}}
+  .skill-card{
+    background:var(--bg-panel); border:1px solid var(--line);
+    border-radius:10px; padding:18px 18px 16px;
+  }
+  .skill-card .num{font-family:'IBM Plex Mono'; font-size:0.7rem; color:var(--teal); margin-bottom:8px;}
+  .skill-card h3{font-size:0.98rem; font-weight:600; margin-bottom:8px;}
+  .skill-card p{font-size:0.84rem; color:var(--ink-dim);}
+
+  .case{
+    background:linear-gradient(165deg, var(--bg-panel-2), var(--bg-panel));
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .case::before{
+    content:"EPSA"; position:absolute; right:-10px; top:-30px;
+    font-family:'Space Grotesk'; font-weight:700; font-size:8rem;
+    color:rgba(62,207,154,0.045); letter-spacing:-4px; pointer-events:none;
+  }
+  .case-grid{display:grid; grid-template-columns:1fr 1fr; gap:36px; position:relative; z-index:1;}
+  @media (max-width:720px){.case-grid{grid-template-columns:1fr;}}
+  .case h3{font-size:1.25rem; margin-bottom:14px;}
+  .stat-row{display:flex; gap:28px; margin:20px 0 24px; flex-wrap:wrap;}
+  .stat{font-family:'IBM Plex Mono';}
+  .stat b{display:block; font-size:1.5rem; color:var(--teal); font-weight:500;}
+  .stat span{font-size:0.72rem; color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.5px;}
+  .case ul{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .case ul li{
+    font-size:0.88rem; color:var(--ink-dim);
+    padding-left:18px; position:relative;
+  }
+  .case ul li::before{
+    content:"▸"; position:absolute; left:0; color:var(--teal); font-size:0.8rem;
+  }
+  .deliverables{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
+  .pill{
+    font-family:'IBM Plex Mono'; font-size:0.72rem;
+    border:1px solid var(--teal-dim); color:var(--teal);
+    background:rgba(62,207,154,0.06);
+    padding:5px 11px; border-radius:20px;
+  }
+
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--line);}
+  .tl-item{position:relative; padding-bottom:30px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-28px; top:4px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--teal);
+  }
+  .tl-item.current::before{background:var(--teal); box-shadow:0 0 0 4px rgba(62,207,154,0.15);}
+  .tl-date{font-family:'IBM Plex Mono'; font-size:0.75rem; color:var(--amber); margin-bottom:4px;}
+  .tl-role{font-weight:600; font-size:1.02rem;}
+  .tl-org{color:var(--ink-dim); font-size:0.86rem; margin-bottom:8px;}
+  .tl-item p.desc{font-size:0.87rem; color:var(--ink-dim); max-width:620px;}
+
+  footer{padding:56px 0 80px;}
+  .contact-row{
+    display:flex; flex-wrap:wrap; gap:18px; margin-top:24px;
+  }
+  .contact-row a{
+    font-family:'IBM Plex Mono'; font-size:0.85rem;
+    color:var(--ink); text-decoration:none;
+    border:1px solid var(--line); border-radius:8px;
+    padding:10px 16px;
+    transition:border-color .2s, color .2s;
+  }
+  .contact-row a:hover{border-color:var(--teal); color:var(--teal);}
+  .foot-note{margin-top:40px; font-size:0.78rem; color:var(--ink-dim); font-family:'IBM Plex Mono';}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand-group">
+      <svg class="logo-mark" width="36" height="36" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#16201c"/>
+            <stop offset="100%" stop-color="#0d2a22"/>
+          </linearGradient>
+          <linearGradient id="ringGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#5be8b8"/>
+            <stop offset="100%" stop-color="#2a8f6c"/>
+          </linearGradient>
+        </defs>
+        <polygon points="32,3 57,17.5 57,46.5 32,61 7,46.5 7,17.5" fill="url(#logoGradNav)" stroke="url(#ringGradNav)" stroke-width="2"/>
+        <polygon points="32,12 49,21.5 49,42.5 32,52 15,42.5 15,21.5" fill="none" stroke="#234a3d" stroke-width="1"/>
+        <text x="32" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="20" fill="#eaf7f1" letter-spacing="-1">AC</text>
+        <circle cx="32" cy="3" r="1.7" fill="#5be8b8"/>
+        <circle cx="32" cy="61" r="1.7" fill="#5be8b8"/>
+      </svg>
+      <div class="brand">Abdelfettah <span>Cherifi</span></div>
+    </div>
+    <ul>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#epsa">EPSA</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="logo-hero" width="84" height="84" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="logoGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#16201c"/>
+          <stop offset="100%" stop-color="#0d2a22"/>
+        </linearGradient>
+        <linearGradient id="ringGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#5be8b8"/>
+          <stop offset="100%" stop-color="#2a8f6c"/>
+        </linearGradient>
+        <filter id="heroShadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000000" flood-opacity="0.35"/>
+        </filter>
+      </defs>
+      <g filter="url(#heroShadow)">
+        <polygon points="32,3 57,17.5 57,46.5 32,61 7,46.5 7,17.5" fill="url(#logoGradHero)" stroke="url(#ringGradHero)" stroke-width="2"/>
+        <polygon points="32,12 49,21.5 49,42.5 32,52 15,42.5 15,21.5" fill="none" stroke="#234a3d" stroke-width="1"/>
+        <text x="32" y="40" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="20" fill="#eaf7f1" letter-spacing="-1">AC</text>
+        <circle cx="32" cy="3" r="1.7" fill="#5be8b8"/>
+        <circle cx="32" cy="61" r="1.7" fill="#5be8b8"/>
+      </g>
+    </svg>
+    <div class="eyebrow">Disponible pour mandats — Montréal / Remote</div>
+    <h1 class="title">Abdelfettah Cherifi — infrastructure poste de travail, <span class="accent">Intune & sécurité Microsoft</span></h1>
+    <p class="subtitle">Plus de 25 ans à migrer, sécuriser et automatiser des parcs de postes de travail — de 600 à plus de 15 000 machines — pour des organisations comme la Caisse de dépôt et placement du Québec, CAE et Hydro-Québec. Expertise complémentaire en audit Intune et sécurité PKI au service de clients européens.</p>
+    <div class="hero-meta">
+      <span><b>Saint-Constant, QC</b> · Canada</span>
+      <span><b>FR</b> natif · <b>EN</b> intermédiaire · <b>AR</b> natif</span>
+      <span>linkedin.com/in/abdelcherifi</span>
+    </div>
+  </div>
+</header>
+
+<section id="parcours">
+  <div class="wrap">
+    <div class="tag">Parcours</div>
+    <h2 class="h">Vingt ans de gestion de parc informatique</h2>
+    <p class="h-sub">D'analyste packaging chez Hydro-Québec à Product Owner gestion poste de travail à la Caisse de dépôt — une progression continue vers la gestion d'environnements de plus en plus grands et critiques.</p>
+
+    <div class="timeline">
+      <div class="tl-item current">
+        <div class="tl-date">Depuis février 2023</div>
+        <div class="tl-role">Technical Lead · Product Owner, gestion poste de travail</div>
+        <div class="tl-org">Caisse de dépôt et placement du Québec (CDPQ)</div>
+        <p class="desc">Coordination de la migration d'un parc de plus de 3 500 machines et 2 000 utilisateurs : SCCM → Intune, GPO → Intune Policy, plus de 600 applications migrées, Autopilot/Entra ID, Windows Hello for Business, IPU vers Windows 11, et gestion de plus de 800 VDI sur AWS.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mars 2020 – Janvier 2023</div>
+        <div class="tl-role">Administrateur SCCM/Intune</div>
+        <div class="tl-org">CAE</div>
+        <p class="desc">Gestion d'un parc de plus de 15 000 machines déployées dans plus de 50 pays. Autopilot/Entra ID à grande échelle, WUFB, politiques MDE Defender via Intune, WDAC.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mai 2018 – Février 2020</div>
+        <div class="tl-role">Administrateur SCCM</div>
+        <div class="tl-org">CGI — client Caisse de dépôt et placement du Québec</div>
+        <p class="desc">Packaging et déploiement Windows 10/Mac OSX, migration Office 365, migration plateforme de reporting vers Power BI.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2014 – 2018</div>
+        <div class="tl-role">Analyste infrastructure & packaging</div>
+        <div class="tl-org">Victrix · Groupe Dynamite · CODE 6 (client Hydro-Québec)</div>
+        <p class="desc">Migrations Windows 7/10 à grande échelle, infrastructures SCCM 2012/2016, images de postes retail et back-office.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2006 – 2014</div>
+        <div class="tl-role">Analyste packaging & distribution logicielle</div>
+        <div class="tl-org">ETS · CGI · IBM Canada · Desjardins-FCDQ</div>
+        <p class="desc">Packaging SCCM/Tivoli, certification d'applications, migrations Windows et Office pour clients tels que Société Générale.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">1998 – 2006</div>
+        <div class="tl-role">Débuts en réseau & programmation</div>
+        <div class="tl-org">SODEMA · SETOR · Mondial Forage · ETPS</div>
+        <p class="desc">Support réseau ADSL/DSL, administration réseau, puis programmation VB6 et PL/SQL.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="epsa">
+  <div class="wrap">
+    <div class="tag">Mandat client européen</div>
+    <h2 class="h">Audit Intune & sécurité PKI pour EPSA / EPSA DEV</h2>
+    <p class="h-sub">En parallèle de son rôle à la CDPQ, Abdel met son expertise Intune et PKI au service de clients européens, avec un mandat d'audit approfondi livré pour EPSA DEV.</p>
+
+    <div class="case">
+      <div class="case-grid">
+        <div>
+          <h3>Audit Intune — parc managé</h3>
+          <div class="stat-row">
+            <div class="stat"><b>~3 191</b><span>postes Windows audités</span></div>
+            <div class="stat"><b>27</b><span>sections — rapport DOCX</span></div>
+            <div class="stat"><b>13</b><span>slides — comité exécutif</span></div>
+          </div>
+          <ul>
+            <li>Groupe Autopilot orphelin et profil mal assigné détectés</li>
+            <li>Erreurs Universal Print analysées (périmètre Espagne)</li>
+            <li>Script de remédiation proactive Intune (Secure Boot)</li>
+          </ul>
+          <div class="deliverables">
+            <span class="pill">Rapport DOCX</span>
+            <span class="pill">PowerPoint exécutif</span>
+            <span class="pill">Runbook Azure Automation</span>
+          </div>
+        </div>
+        <div>
+          <h3>Sécurité PKI — certificats SCEP/NDES</h3>
+          <p class="desc" style="margin-bottom:16px;">Investigation d'un pic de duplication de certificats iOS via analyse des logs IIS sur NDES et Venafi TPP.</p>
+          <ul>
+            <li>Cause racine identifiée : chevauchement de profil PKI</li>
+            <li>Pipeline de télémétrie pour ~4 000 postes Intune/Entra</li>
+            <li>Authentification par certificat, clé TPM non exportable</li>
+          </ul>
+          <div class="deliverables">
+            <span class="pill">Venafi TPP</span>
+            <span class="pill">NDES / SCEP</span>
+            <span class="pill">Azure Log Analytics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="wrap">
+    <div class="tag">Compétences</div>
+    <h2 class="h">Stack technique</h2>
+    <p class="h-sub">De la gestion d'identité et des endpoints jusqu'à l'automatisation et la sécurité PKI.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="num">01</div>
+        <h3>Endpoint Management</h3>
+        <p>Microsoft Intune, SCCM (2007–2022), Autopilot, Entra ID, WUFB, WDAC</p>
+      </div>
+      <div class="skill-card">
+        <div class="num">02</div>
+        <h3>Sécurité & PKI</h3>
+        <p>Microsoft Defender (MDE), Venafi TPP, NDES/SCEP, gestion du cycle de vie des certificats</p>
+      </div>
+      <div class="skill-card">
+        <div class="num">03</div>
+        <h3>Automatisation</h3>
+        <p>PowerShell, Power Automate, Copilot Studio, Azure Automation (Managed Identity, Graph API)</p>
+      </div>
+      <div class="skill-card">
+        <div class="num">04</div>
+        <h3>ITSM</h3>
+        <p>ServiceNow, catalogue self-service, workflows d'approbation et de licence</p>
+      </div>
+      <div class="skill-card">
+        <div class="num">05</div>
+        <h3>Packaging & déploiement</h3>
+        <p>Wise, InstallShield, PSADT, Tivoli, certification d'applications</p>
+      </div>
+      <div class="skill-card">
+        <div class="num">06</div>
+        <h3>macOS & multiplateforme</h3>
+        <p>DEP, packages avec certificat développeur, gestion HP/multi-tenant</p>
+      </div>
+      <div class="skill-card">
+        <div class="num">07</div>
+        <h3>IA & analyse de données</h3>
+        <p>Copilot Studio, intégration GPT-4o, Power BI, outils d'analyse de logs et de tendances assistés par IA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formation" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="tag">Formation</div>
+    <h2 class="h" style="margin-bottom:24px;">Diplômes</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Juin 2006</div>
+        <div class="tl-role">D.E.S.S. en génie informatique</div>
+        <div class="tl-org">École Polytechnique de Montréal</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Juin 1997</div>
+        <div class="tl-role">Baccalauréat en génie logiciel — Ingénieur d'État (6ᵉ de promotion)</div>
+        <div class="tl-org">Université des Sciences et de la Technologie d'Oran, Algérie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="tag">Contact</div>
+    <h2 class="h">Discutons de votre prochain projet</h2>
+    <div class="contact-row">
+      <a href="mailto:abdel.cherifi@gmail.com">abdel.cherifi@gmail.com</a>
+      <a href="tel:+15145604239">+1 514 560 4239</a>
+      <a href="https://www.linkedin.com/in/abdelcherifi" target="_blank">LinkedIn</a>
+    </div>
+    <p class="foot-note">Saint-Constant, QC, Canada</p>
+  </div>
+</footer>
+
+</body>
+</html>
