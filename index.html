@@ -188,6 +188,19 @@
   }
   .lang-toggle button.active{background:var(--teal-dim); color:var(--teal);}
   .lang-toggle button:hover:not(.active){color:var(--ink);}
+
+  .cv-row{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:28px;}
+  .cv-label{font-family:'IBM Plex Mono'; font-size:0.78rem; color:var(--ink-dim);}
+  .cv-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono'; font-size:0.82rem; font-weight:500;
+    text-decoration:none; padding:10px 18px; border-radius:8px;
+    border:1px solid var(--teal-dim); color:var(--teal);
+    background:rgba(62,207,154,0.06);
+    transition:background .2s, border-color .2s;
+  }
+  .cv-btn:hover{background:rgba(62,207,154,0.14); border-color:var(--teal);}
+  .cv-btn svg{width:14px; height:14px; flex-shrink:0;}
 </style>
 </head>
 <body>
@@ -258,6 +271,17 @@
       <span><b>Saint-Constant, QC</b> · Canada</span>
       <span class="i18n-html" data-fr-html="&lt;b&gt;FR&lt;/b&gt; natif · &lt;b&gt;EN&lt;/b&gt; intermédiaire · &lt;b&gt;AR&lt;/b&gt; natif" data-en-html="Native &lt;b&gt;FR&lt;/b&gt; · Intermediate &lt;b&gt;EN&lt;/b&gt; · Native &lt;b&gt;AR&lt;/b&gt;"><b>FR</b> natif · <b>EN</b> intermédiaire · <b>AR</b> natif</span>
       <span>linkedin.com/in/abdelcherifi</span>
+    </div>
+    <div class="cv-row">
+      <span class="cv-label i18n" data-fr="Télécharger le CV :" data-en="Download résumé:">Télécharger le CV :</span>
+      <a class="cv-btn" href="CV-Abdel-Cherifi-FR-New.docx" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        CV — Français (.docx)
+      </a>
+      <a class="cv-btn" href="CV-Abdel-Cherifi-EN-New.docx" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        Resume — English (.docx)
+      </a>
     </div>
   </div>
 </header>
