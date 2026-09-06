@@ -173,6 +173,21 @@
   }
   .contact-row a:hover{border-color:var(--teal); color:var(--teal);}
   .foot-note{margin-top:40px; font-size:0.78rem; color:var(--ink-dim); font-family:'IBM Plex Mono';}
+
+  .lang-toggle{
+    display:flex; align-items:center; gap:2px;
+    background:var(--bg-panel); border:1px solid var(--line);
+    border-radius:20px; padding:3px; font-family:'IBM Plex Mono';
+    flex-shrink:0;
+  }
+  .lang-toggle button{
+    appearance:none; border:none; background:transparent; cursor:pointer;
+    color:var(--ink-dim); font-family:'IBM Plex Mono'; font-size:0.72rem;
+    font-weight:500; padding:5px 11px; border-radius:16px;
+    transition:background .2s, color .2s;
+  }
+  .lang-toggle button.active{background:var(--teal-dim); color:var(--teal);}
+  .lang-toggle button:hover:not(.active){color:var(--ink);}
 </style>
 </head>
 <body>
@@ -200,11 +215,15 @@
       <div class="brand">Abdelfettah <span>Cherifi</span></div>
     </div>
     <ul>
-      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#parcours" class="i18n" data-fr="Parcours" data-en="Journey">Parcours</a></li>
       <li><a href="#epsa">EPSA</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#competences" class="i18n" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+      <li><a href="#contact" class="i18n" data-fr="Contact" data-en="Contact">Contact</a></li>
     </ul>
+    <div class="lang-toggle" role="group" aria-label="Langue / Language">
+      <button type="button" id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+      <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 </nav>
 
@@ -232,12 +251,12 @@
         <circle cx="32" cy="61" r="1.7" fill="#5be8b8"/>
       </g>
     </svg>
-    <div class="eyebrow">Disponible pour mandats — Montréal / Remote</div>
-    <h1 class="title">Abdelfettah Cherifi — infrastructure poste de travail, <span class="accent">Intune & sécurité Microsoft</span></h1>
-    <p class="subtitle">Plus de 25 ans à migrer, sécuriser et automatiser des parcs de postes de travail — de 600 à plus de 15 000 machines — pour des organisations comme la Caisse de dépôt et placement du Québec, CAE et Hydro-Québec. Expertise complémentaire en audit Intune et sécurité PKI au service de clients européens.</p>
+    <div class="eyebrow i18n" data-fr="Disponible pour mandats — Montréal / Remote" data-en="Available for engagements — Montreal / Remote">Disponible pour mandats — Montréal / Remote</div>
+    <h1 class="title i18n-html" data-fr-html="Abdelfettah Cherifi — infrastructure poste de travail, <span class=&quot;accent&quot;>Intune &amp; sécurité Microsoft</span>" data-en-html="Abdelfettah Cherifi — Workstation Infrastructure, <span class=&quot;accent&quot;>Intune &amp; Microsoft Security</span>">Abdelfettah Cherifi — infrastructure poste de travail, <span class="accent">Intune & sécurité Microsoft</span></h1>
+    <p class="subtitle i18n" data-fr="Plus de 25 ans à migrer, sécuriser et automatiser des parcs de postes de travail — de 600 à plus de 15 000 machines — pour des organisations comme la Caisse de dépôt et placement du Québec, CAE et Hydro-Québec. Expertise complémentaire en audit Intune et sécurité PKI au service de clients européens." data-en="Over 25 years migrating, securing, and automating workstation fleets — from 600 to more than 15,000 machines — for organizations such as the Caisse de dépôt et placement du Québec, CAE, and Hydro-Québec. Complementary expertise in Intune audits and PKI security for European clients.">Plus de 25 ans à migrer, sécuriser et automatiser des parcs de postes de travail — de 600 à plus de 15 000 machines — pour des organisations comme la Caisse de dépôt et placement du Québec, CAE et Hydro-Québec. Expertise complémentaire en audit Intune et sécurité PKI au service de clients européens.</p>
     <div class="hero-meta">
       <span><b>Saint-Constant, QC</b> · Canada</span>
-      <span><b>FR</b> natif · <b>EN</b> intermédiaire · <b>AR</b> natif</span>
+      <span class="i18n-html" data-fr-html="&lt;b&gt;FR&lt;/b&gt; natif · &lt;b&gt;EN&lt;/b&gt; intermédiaire · &lt;b&gt;AR&lt;/b&gt; natif" data-en-html="Native &lt;b&gt;FR&lt;/b&gt; · Intermediate &lt;b&gt;EN&lt;/b&gt; · Native &lt;b&gt;AR&lt;/b&gt;"><b>FR</b> natif · <b>EN</b> intermédiaire · <b>AR</b> natif</span>
       <span>linkedin.com/in/abdelcherifi</span>
     </div>
   </div>
@@ -245,46 +264,46 @@
 
 <section id="parcours">
   <div class="wrap">
-    <div class="tag">Parcours</div>
-    <h2 class="h">Vingt ans de gestion de parc informatique</h2>
-    <p class="h-sub">D'analyste packaging chez Hydro-Québec à Product Owner gestion poste de travail à la Caisse de dépôt — une progression continue vers la gestion d'environnements de plus en plus grands et critiques.</p>
+    <div class="tag i18n" data-fr="Parcours" data-en="Journey">Parcours</div>
+    <h2 class="h i18n" data-fr="Vingt ans de gestion de parc informatique" data-en="Twenty years of IT fleet management">Vingt ans de gestion de parc informatique</h2>
+    <p class="h-sub i18n" data-fr="D'analyste packaging chez Hydro-Québec à Product Owner gestion poste de travail à la Caisse de dépôt — une progression continue vers la gestion d'environnements de plus en plus grands et critiques." data-en="From packaging analyst at Hydro-Québec to Product Owner for workstation management at the Caisse de dépôt — a steady progression toward managing increasingly large and critical environments.">D'analyste packaging chez Hydro-Québec à Product Owner gestion poste de travail à la Caisse de dépôt — une progression continue vers la gestion d'environnements de plus en plus grands et critiques.</p>
 
     <div class="timeline">
       <div class="tl-item current">
         <div class="tl-date">Depuis février 2023</div>
-        <div class="tl-role">Technical Lead · Product Owner, gestion poste de travail</div>
+        <div class="tl-role i18n" data-fr="Technical Lead · Product Owner, gestion poste de travail" data-en="Technical Lead · Product Owner, Workstation Management">Technical Lead · Product Owner, gestion poste de travail</div>
         <div class="tl-org">Caisse de dépôt et placement du Québec (CDPQ)</div>
-        <p class="desc">Coordination de la migration d'un parc de plus de 3 500 machines et 2 000 utilisateurs : SCCM → Intune, GPO → Intune Policy, plus de 600 applications migrées, Autopilot/Entra ID, Windows Hello for Business, IPU vers Windows 11, et gestion de plus de 800 VDI sur AWS.</p>
+        <p class="desc i18n" data-fr="Coordination de la migration d'un parc de plus de 3 500 machines et 2 000 utilisateurs : SCCM → Intune, GPO → Intune Policy, plus de 600 applications migrées, Autopilot/Entra ID, Windows Hello for Business, IPU vers Windows 11, et gestion de plus de 800 VDI sur AWS." data-en="Coordinated the migration of a fleet of over 3,500 machines and 2,000 users: SCCM → Intune, GPO → Intune Policy, more than 600 applications migrated, Autopilot/Entra ID, Windows Hello for Business, in-place upgrade to Windows 11, and management of 800+ VDI instances on AWS.">Coordination de la migration d'un parc de plus de 3 500 machines et 2 000 utilisateurs : SCCM → Intune, GPO → Intune Policy, plus de 600 applications migrées, Autopilot/Entra ID, Windows Hello for Business, IPU vers Windows 11, et gestion de plus de 800 VDI sur AWS.</p>
       </div>
       <div class="tl-item">
         <div class="tl-date">Mars 2020 – Janvier 2023</div>
-        <div class="tl-role">Administrateur SCCM/Intune</div>
+        <div class="tl-role i18n" data-fr="Administrateur SCCM/Intune" data-en="SCCM/Intune Administrator">Administrateur SCCM/Intune</div>
         <div class="tl-org">CAE</div>
-        <p class="desc">Gestion d'un parc de plus de 15 000 machines déployées dans plus de 50 pays. Autopilot/Entra ID à grande échelle, WUFB, politiques MDE Defender via Intune, WDAC.</p>
+        <p class="desc i18n" data-fr="Gestion d'un parc de plus de 15 000 machines déployées dans plus de 50 pays. Autopilot/Entra ID à grande échelle, WUFB, politiques MDE Defender via Intune, WDAC." data-en="Managed a fleet of over 15,000 machines deployed across more than 50 countries. Large-scale Autopilot/Entra ID, WUFB, MDE Defender policies via Intune, WDAC.">Gestion d'un parc de plus de 15 000 machines déployées dans plus de 50 pays. Autopilot/Entra ID à grande échelle, WUFB, politiques MDE Defender via Intune, WDAC.</p>
       </div>
       <div class="tl-item">
         <div class="tl-date">Mai 2018 – Février 2020</div>
-        <div class="tl-role">Administrateur SCCM</div>
-        <div class="tl-org">CGI — client Caisse de dépôt et placement du Québec</div>
-        <p class="desc">Packaging et déploiement Windows 10/Mac OSX, migration Office 365, migration plateforme de reporting vers Power BI.</p>
+        <div class="tl-role i18n" data-fr="Administrateur SCCM" data-en="SCCM Administrator">Administrateur SCCM</div>
+        <div class="tl-org i18n" data-fr="CGI — client Caisse de dépôt et placement du Québec" data-en="CGI — client: Caisse de dépôt et placement du Québec">CGI — client Caisse de dépôt et placement du Québec</div>
+        <p class="desc i18n" data-fr="Packaging et déploiement Windows 10/Mac OSX, migration Office 365, migration plateforme de reporting vers Power BI." data-en="Packaging and deployment of Windows 10/Mac OSX, Office 365 migration, reporting platform migration to Power BI.">Packaging et déploiement Windows 10/Mac OSX, migration Office 365, migration plateforme de reporting vers Power BI.</p>
       </div>
       <div class="tl-item">
         <div class="tl-date">2014 – 2018</div>
-        <div class="tl-role">Analyste infrastructure & packaging</div>
-        <div class="tl-org">Victrix · Groupe Dynamite · CODE 6 (client Hydro-Québec)</div>
-        <p class="desc">Migrations Windows 7/10 à grande échelle, infrastructures SCCM 2012/2016, images de postes retail et back-office.</p>
+        <div class="tl-role i18n" data-fr="Analyste infrastructure & packaging" data-en="Infrastructure & Packaging Analyst">Analyste infrastructure & packaging</div>
+        <div class="tl-org i18n" data-fr="Victrix · Groupe Dynamite · CODE 6 (client Hydro-Québec)" data-en="Victrix · Groupe Dynamite · CODE 6 (client: Hydro-Québec)">Victrix · Groupe Dynamite · CODE 6 (client Hydro-Québec)</div>
+        <p class="desc i18n" data-fr="Migrations Windows 7/10 à grande échelle, infrastructures SCCM 2012/2016, images de postes retail et back-office." data-en="Large-scale Windows 7/10 migrations, SCCM 2012/2016 infrastructures, retail and back-office workstation images.">Migrations Windows 7/10 à grande échelle, infrastructures SCCM 2012/2016, images de postes retail et back-office.</p>
       </div>
       <div class="tl-item">
         <div class="tl-date">2006 – 2014</div>
-        <div class="tl-role">Analyste packaging & distribution logicielle</div>
+        <div class="tl-role i18n" data-fr="Analyste packaging & distribution logicielle" data-en="Packaging & Software Distribution Analyst">Analyste packaging & distribution logicielle</div>
         <div class="tl-org">ETS · CGI · IBM Canada · Desjardins-FCDQ</div>
-        <p class="desc">Packaging SCCM/Tivoli, certification d'applications, migrations Windows et Office pour clients tels que Société Générale.</p>
+        <p class="desc i18n" data-fr="Packaging SCCM/Tivoli, certification d'applications, migrations Windows et Office pour clients tels que Société Générale." data-en="SCCM/Tivoli packaging, application certification, Windows and Office migrations for clients such as Société Générale.">Packaging SCCM/Tivoli, certification d'applications, migrations Windows et Office pour clients tels que Société Générale.</p>
       </div>
       <div class="tl-item">
         <div class="tl-date">1998 – 2006</div>
-        <div class="tl-role">Débuts en réseau & programmation</div>
+        <div class="tl-role i18n" data-fr="Débuts en réseau & programmation" data-en="Early career in networking & programming">Débuts en réseau & programmation</div>
         <div class="tl-org">SODEMA · SETOR · Mondial Forage · ETPS</div>
-        <p class="desc">Support réseau ADSL/DSL, administration réseau, puis programmation VB6 et PL/SQL.</p>
+        <p class="desc i18n" data-fr="Support réseau ADSL/DSL, administration réseau, puis programmation VB6 et PL/SQL." data-en="ADSL/DSL network support, network administration, then VB6 and PL/SQL programming.">Support réseau ADSL/DSL, administration réseau, puis programmation VB6 et PL/SQL.</p>
       </div>
     </div>
   </div>
@@ -292,37 +311,37 @@
 
 <section id="epsa">
   <div class="wrap">
-    <div class="tag">Mandat client européen</div>
-    <h2 class="h">Audit Intune & sécurité PKI pour EPSA / EPSA DEV</h2>
-    <p class="h-sub">En parallèle de son rôle à la CDPQ, Abdel met son expertise Intune et PKI au service de clients européens, avec un mandat d'audit approfondi livré pour EPSA DEV.</p>
+    <div class="tag i18n" data-fr="Mandat client européen" data-en="European client engagement">Mandat client européen</div>
+    <h2 class="h i18n" data-fr="Audit Intune & sécurité PKI pour EPSA / EPSA DEV" data-en="Intune Audit & PKI Security for EPSA / EPSA DEV">Audit Intune & sécurité PKI pour EPSA / EPSA DEV</h2>
+    <p class="h-sub i18n" data-fr="En parallèle de son rôle à la CDPQ, Abdel met son expertise Intune et PKI au service de clients européens, avec un mandat d'audit approfondi livré pour EPSA DEV." data-en="Alongside his role at CDPQ, Abdel puts his Intune and PKI expertise to work for European clients, having delivered an in-depth audit engagement for EPSA DEV.">En parallèle de son rôle à la CDPQ, Abdel met son expertise Intune et PKI au service de clients européens, avec un mandat d'audit approfondi livré pour EPSA DEV.</p>
 
     <div class="case">
       <div class="case-grid">
         <div>
-          <h3>Audit Intune — parc managé</h3>
+          <h3 class="i18n" data-fr="Audit Intune — parc managé" data-en="Intune Audit — Managed Fleet">Audit Intune — parc managé</h3>
           <div class="stat-row">
-            <div class="stat"><b>~3 191</b><span>postes Windows audités</span></div>
-            <div class="stat"><b>27</b><span>sections — rapport DOCX</span></div>
-            <div class="stat"><b>13</b><span>slides — comité exécutif</span></div>
+            <div class="stat"><b>~3 191</b><span class="i18n" data-fr="postes Windows audités" data-en="Windows devices audited">postes Windows audités</span></div>
+            <div class="stat"><b>27</b><span class="i18n" data-fr="sections — rapport DOCX" data-en="sections — DOCX report">sections — rapport DOCX</span></div>
+            <div class="stat"><b>13</b><span class="i18n" data-fr="slides — comité exécutif" data-en="slides — executive committee">slides — comité exécutif</span></div>
           </div>
           <ul>
-            <li>Groupe Autopilot orphelin et profil mal assigné détectés</li>
-            <li>Erreurs Universal Print analysées (périmètre Espagne)</li>
-            <li>Script de remédiation proactive Intune (Secure Boot)</li>
+            <li class="i18n" data-fr="Groupe Autopilot orphelin et profil mal assigné détectés" data-en="Detected an orphaned Autopilot group and a misassigned profile">Groupe Autopilot orphelin et profil mal assigné détectés</li>
+            <li class="i18n" data-fr="Erreurs Universal Print analysées (périmètre Espagne)" data-en="Analyzed Universal Print errors (Spain scope)">Erreurs Universal Print analysées (périmètre Espagne)</li>
+            <li class="i18n" data-fr="Script de remédiation proactive Intune (Secure Boot)" data-en="Proactive Intune remediation script (Secure Boot)">Script de remédiation proactive Intune (Secure Boot)</li>
           </ul>
           <div class="deliverables">
-            <span class="pill">Rapport DOCX</span>
-            <span class="pill">PowerPoint exécutif</span>
+            <span class="pill i18n" data-fr="Rapport DOCX" data-en="DOCX Report">Rapport DOCX</span>
+            <span class="pill i18n" data-fr="PowerPoint exécutif" data-en="Executive PowerPoint">PowerPoint exécutif</span>
             <span class="pill">Runbook Azure Automation</span>
           </div>
         </div>
         <div>
-          <h3>Sécurité PKI — certificats SCEP/NDES</h3>
-          <p class="desc" style="margin-bottom:16px;">Investigation d'un pic de duplication de certificats iOS via analyse des logs IIS sur NDES et Venafi TPP.</p>
+          <h3 class="i18n" data-fr="Sécurité PKI — certificats SCEP/NDES" data-en="PKI Security — SCEP/NDES Certificates">Sécurité PKI — certificats SCEP/NDES</h3>
+          <p class="desc i18n" style="margin-bottom:16px;" data-fr="Investigation d'un pic de duplication de certificats iOS via analyse des logs IIS sur NDES et Venafi TPP." data-en="Investigated an iOS certificate duplication spike via IIS log analysis on NDES and Venafi TPP.">Investigation d'un pic de duplication de certificats iOS via analyse des logs IIS sur NDES et Venafi TPP.</p>
           <ul>
-            <li>Cause racine identifiée : chevauchement de profil PKI</li>
-            <li>Pipeline de télémétrie pour ~4 000 postes Intune/Entra</li>
-            <li>Authentification par certificat, clé TPM non exportable</li>
+            <li class="i18n" data-fr="Cause racine identifiée : chevauchement de profil PKI" data-en="Root cause identified: overlapping PKI profile">Cause racine identifiée : chevauchement de profil PKI</li>
+            <li class="i18n" data-fr="Pipeline de télémétrie pour ~4 000 postes Intune/Entra" data-en="Telemetry pipeline for ~4,000 Intune/Entra devices">Pipeline de télémétrie pour ~4 000 postes Intune/Entra</li>
+            <li class="i18n" data-fr="Authentification par certificat, clé TPM non exportable" data-en="Certificate-based authentication, non-exportable TPM key">Authentification par certificat, clé TPM non exportable</li>
           </ul>
           <div class="deliverables">
             <span class="pill">Venafi TPP</span>
@@ -337,9 +356,9 @@
 
 <section id="competences">
   <div class="wrap">
-    <div class="tag">Compétences</div>
-    <h2 class="h">Stack technique</h2>
-    <p class="h-sub">De la gestion d'identité et des endpoints jusqu'à l'automatisation et la sécurité PKI.</p>
+    <div class="tag i18n" data-fr="Compétences" data-en="Skills">Compétences</div>
+    <h2 class="h i18n" data-fr="Stack technique" data-en="Technical Stack">Stack technique</h2>
+    <p class="h-sub i18n" data-fr="De la gestion d'identité et des endpoints jusqu'à l'automatisation et la sécurité PKI." data-en="From identity and endpoint management to automation and PKI security.">De la gestion d'identité et des endpoints jusqu'à l'automatisation et la sécurité PKI.</p>
 
     <div class="skills-grid">
       <div class="skill-card">
@@ -349,33 +368,33 @@
       </div>
       <div class="skill-card">
         <div class="num">02</div>
-        <h3>Sécurité & PKI</h3>
-        <p>Microsoft Defender (MDE), Venafi TPP, NDES/SCEP, gestion du cycle de vie des certificats</p>
+        <h3 class="i18n" data-fr="Sécurité & PKI" data-en="Security & PKI">Sécurité & PKI</h3>
+        <p class="i18n" data-fr="Microsoft Defender (MDE), Venafi TPP, NDES/SCEP, gestion du cycle de vie des certificats" data-en="Microsoft Defender (MDE), Venafi TPP, NDES/SCEP, certificate lifecycle management">Microsoft Defender (MDE), Venafi TPP, NDES/SCEP, gestion du cycle de vie des certificats</p>
       </div>
       <div class="skill-card">
         <div class="num">03</div>
-        <h3>Automatisation</h3>
+        <h3 class="i18n" data-fr="Automatisation" data-en="Automation">Automatisation</h3>
         <p>PowerShell, Power Automate, Copilot Studio, Azure Automation (Managed Identity, Graph API)</p>
       </div>
       <div class="skill-card">
         <div class="num">04</div>
         <h3>ITSM</h3>
-        <p>ServiceNow, catalogue self-service, workflows d'approbation et de licence</p>
+        <p class="i18n" data-fr="ServiceNow, catalogue self-service, workflows d'approbation et de licence" data-en="ServiceNow, self-service catalog, approval and licensing workflows">ServiceNow, catalogue self-service, workflows d'approbation et de licence</p>
       </div>
       <div class="skill-card">
         <div class="num">05</div>
-        <h3>Packaging & déploiement</h3>
-        <p>Wise, InstallShield, PSADT, Tivoli, certification d'applications</p>
+        <h3 class="i18n" data-fr="Packaging & déploiement" data-en="Packaging & Deployment">Packaging & déploiement</h3>
+        <p class="i18n" data-fr="Wise, InstallShield, PSADT, Tivoli, certification d'applications" data-en="Wise, InstallShield, PSADT, Tivoli, application certification">Wise, InstallShield, PSADT, Tivoli, certification d'applications</p>
       </div>
       <div class="skill-card">
         <div class="num">06</div>
-        <h3>macOS & multiplateforme</h3>
-        <p>DEP, packages avec certificat développeur, gestion HP/multi-tenant</p>
+        <h3 class="i18n" data-fr="macOS & multiplateforme" data-en="macOS & Cross-Platform">macOS & multiplateforme</h3>
+        <p class="i18n" data-fr="DEP, packages avec certificat développeur, gestion HP/multi-tenant" data-en="DEP, developer-certificate signed packages, HP/multi-tenant management">DEP, packages avec certificat développeur, gestion HP/multi-tenant</p>
       </div>
       <div class="skill-card">
         <div class="num">07</div>
-        <h3>IA & analyse de données</h3>
-        <p>Copilot Studio, intégration GPT-4o, Power BI, outils d'analyse de logs et de tendances assistés par IA</p>
+        <h3 class="i18n" data-fr="IA & analyse de données" data-en="AI & Data Analysis">IA & analyse de données</h3>
+        <p class="i18n" data-fr="Copilot Studio, intégration GPT-4o, Power BI, outils d'analyse de logs et de tendances assistés par IA" data-en="Copilot Studio, GPT-4o integration, Power BI, AI-assisted log and trend analysis tools">Copilot Studio, intégration GPT-4o, Power BI, outils d'analyse de logs et de tendances assistés par IA</p>
       </div>
     </div>
   </div>
@@ -383,18 +402,18 @@
 
 <section id="formation" style="border-bottom:none;">
   <div class="wrap">
-    <div class="tag">Formation</div>
-    <h2 class="h" style="margin-bottom:24px;">Diplômes</h2>
+    <div class="tag i18n" data-fr="Formation" data-en="Education">Formation</div>
+    <h2 class="h i18n" style="margin-bottom:24px;" data-fr="Diplômes" data-en="Degrees">Diplômes</h2>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-date">Juin 2006</div>
-        <div class="tl-role">D.E.S.S. en génie informatique</div>
+        <div class="tl-role i18n" data-fr="D.E.S.S. en génie informatique" data-en="Graduate Diploma (D.E.S.S.) in Computer Engineering">D.E.S.S. en génie informatique</div>
         <div class="tl-org">École Polytechnique de Montréal</div>
       </div>
       <div class="tl-item">
         <div class="tl-date">Juin 1997</div>
-        <div class="tl-role">Baccalauréat en génie logiciel — Ingénieur d'État (6ᵉ de promotion)</div>
-        <div class="tl-org">Université des Sciences et de la Technologie d'Oran, Algérie</div>
+        <div class="tl-role i18n" data-fr="Baccalauréat en génie logiciel — Ingénieur d'État (6ᵉ de promotion)" data-en="Bachelor's Degree in Software Engineering — State Engineer (6th in class)">Baccalauréat en génie logiciel — Ingénieur d'État (6ᵉ de promotion)</div>
+        <div class="tl-org i18n" data-fr="Université des Sciences et de la Technologie d'Oran, Algérie" data-en="University of Science and Technology of Oran, Algeria">Université des Sciences et de la Technologie d'Oran, Algérie</div>
       </div>
     </div>
   </div>
@@ -402,8 +421,8 @@
 
 <footer id="contact">
   <div class="wrap">
-    <div class="tag">Contact</div>
-    <h2 class="h">Discutons de votre prochain projet</h2>
+    <div class="tag i18n" data-fr="Contact" data-en="Contact">Contact</div>
+    <h2 class="h i18n" data-fr="Discutons de votre prochain projet" data-en="Let's talk about your next project">Discutons de votre prochain projet</h2>
     <div class="contact-row">
       <a href="mailto:abdel.cherifi@gmail.com">abdel.cherifi@gmail.com</a>
       <a href="tel:+15145604239">+1 514 560 4239</a>
@@ -412,6 +431,51 @@
     <p class="foot-note">Saint-Constant, QC, Canada</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var TITLES = {
+    fr: "Abdelfettah Cherifi — Expert Infrastructure & Sécurité Microsoft",
+    en: "Abdelfettah Cherifi — Microsoft Infrastructure & Security Expert"
+  };
+
+  function setLang(lang){
+    if(lang !== 'fr' && lang !== 'en') lang = 'fr';
+
+    document.querySelectorAll('.i18n').forEach(function(el){
+      var val = el.getAttribute('data-' + lang);
+      if(val !== null) el.textContent = val;
+    });
+
+    document.querySelectorAll('.i18n-html').forEach(function(el){
+      var val = el.getAttribute('data-' + lang + '-html');
+      if(val !== null) el.innerHTML = val;
+    });
+
+    document.title = TITLES[lang];
+    document.documentElement.lang = lang;
+
+    var btnFr = document.getElementById('btn-fr');
+    var btnEn = document.getElementById('btn-en');
+    if(btnFr && btnEn){
+      btnFr.classList.toggle('active', lang === 'fr');
+      btnEn.classList.toggle('active', lang === 'en');
+    }
+
+    try { localStorage.setItem('portfolio-lang', lang); } catch(e){}
+  }
+
+  window.setLang = setLang;
+
+  var saved = null;
+  try { saved = localStorage.getItem('portfolio-lang'); } catch(e){}
+  if(!saved){
+    var browserLang = (navigator.language || '').toLowerCase();
+    saved = browserLang.indexOf('fr') === 0 ? 'fr' : (browserLang ? 'en' : 'fr');
+  }
+  if(saved !== 'fr'){ setLang(saved); }
+})();
+</script>
 
 </body>
 </html>
